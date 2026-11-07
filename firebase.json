@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [{
+      "source": "**",
+      "run": {
+        "serviceId": "YOUR_CLOUD_RUN_SERVICE_ID",
+        "region": "us-central1"
+      }
+    }]
+  }
+}

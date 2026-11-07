@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nutrition Analysis | Bodyboon</title>
+  <meta name="title" content="Nutrition Analysis | Bodyboon">
+  <meta name="description" content="Find out if you are receiving the nutrition you need from your regular diet with our food analysis app." />
+  <meta name="robots" content="index,follow" />
+  <meta name="rating" content="safe for kids" />
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+  <link rel="manifest" crossorigin="use-credentials" href="/favicons/manifest.json" type="application/json" />
+
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scrollbar-color: rgb(238, 238, 238) rgb(57, 62, 70);
+        scrollbar-width: thin;
+      }
+    body {
+        font: 16px sans-serif;
+        margin: auto;
+      }
+    #loading-zone {
+        display: flex;
+        gap: 22px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+      }
+    h1 {
+        font-size: 24px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+      }
+    .spinner {
+        border: 2px dashed rgb(14, 14, 14);
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        animation: spin 0.7s linear infinite;
+      }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    .div-load-logo {
+        padding: 22px;
+      }
+    img {
+        width: 42px;
+        height: 42px;
+      }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+      document.getElementById("loading").hidden = true;
+      document.getElementById("app").hidden = false;
+    });
+  </script>
+</head>
+<body>
+  <div id="loading">
+    <div class="div-load-logo">
+      <img 
+        src="/img/bb-logo-512x512-white.svg"
+        alt="The Bodyboon logo"
+        />
+    </div>
+
+    <div id="loading-zone">
+      <div class="spinner"></div>
+      <h1>CONNECTING</h1>
+    </div>
+  </div>
+
+  <div id="app" hidden></div>
+
+  <script defer src="/dist/app.bundle.js"></script>
+</body>
+</html>

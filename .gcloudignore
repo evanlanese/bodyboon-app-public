@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log
+eslint.config.js
+src/json/fnddsFormatted.json
+README.md
+old-server.js
+*.env
+.env*
